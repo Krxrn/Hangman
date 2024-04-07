@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React + TypeScript
 
 Lien du jeu:
 https://hangman-kelis.vercel.app/
