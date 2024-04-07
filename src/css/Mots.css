@@ -1,0 +1,9 @@
+.word {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    justify-content: center;
+    color: #ffffff;
+}

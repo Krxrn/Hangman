@@ -1,3 +1,5 @@
+import "../css/Mots.css"
+
 type HangmanWordProps = {
   guessedLetters: string[];
   wordToGuess: string;
@@ -6,20 +8,11 @@ type HangmanWordProps = {
 
 export function HangmanMots({ guessedLetters, wordToGuess, reveal = false }: HangmanWordProps) {
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: ".25em",
-        fontSize: "2rem",
-        fontWeight: "bold",
-        textTransform: "uppercase",
-        fontFamily: "monospace",
-      }}
-    >
+    <div className="word">
       {wordToGuess.split("").map((letter, index) => (
         <span key={index}>
           {guessedLetters.includes(letter) || reveal ? (
-            <span style={{ color: guessedLetters.includes(letter) ? "black" : "#ad3535" }}>{letter}</span>
+            <span style={{ color: guessedLetters.includes(letter) ? "#ffffff" : "#e6965c" }}>{letter}</span>
           ) : (
             "_"
           )}

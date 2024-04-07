@@ -1,7 +1,10 @@
-body{
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);    background-position: center; 
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    background-image: url('https://c1.wallpaperflare.com/path/942/218/505/black-board-chalk-traces-school-057e0867f80cd327b7d2ed2b255819ec.jpg');
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Pangolin, sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -11,6 +14,51 @@ body{
 *::-webkit-scrollbar-thumb {
     background-color: #000000;
 }
+
 *::-webkit-scrollbar-track {
     background-color: #000000;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.width{
+    width: 500px;
+}
+
+.content{
+    max-width: 1150px;
+    display: grid;
+    gap: 2rem;
+    margin: 4rem auto;
+}
+
+.titre{
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+}
+
+
+.letter{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.5rem;
+  
+}
+
+
+@media screen and (max-width: 1000px) {
+    .flex {
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        margin: auto;
+    }
+
+    .width{
+        width: inherit;
+    }
 }

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { HangmanDessin } from "./HangmanDessin";
 import { HangmanMots } from "./HangmanMots";
 import { Keyboard } from "./HangmanKeyboard";
+import "../css/App.css"
 
 function App() {
 
@@ -84,21 +85,26 @@ function App() {
   }, []);
 
 
+  // Visuel
   return (
-    <div style={{ maxWidth: "1150px", display: "flex", flexDirection: "column", gap: "2rem", margin: "0 auto", alignItems: "center", }}>
+    <div className="content">
 
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>
-        {isWinner && "Bon travail ! Refresh si tu veux une autre partie"}
-        {isLoser && "Bien essayé. Refresh si tu veux une autre partie"}
+      <div className="titre">
+        <h1>{isWinner && "Excellent ! Refresh si tu veux une autre partie !"}</h1>
+        <h1>{isLoser && "Bien essayé. Refresh si tu veux une autre partie !"}</h1>
       </div>
 
-      <HangmanDessin numberOfGuesses={incorrectLetters.length} />
-      <HangmanMots reveal={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
+      <div className="flex">
+        <div>
+          <HangmanDessin numberOfGuesses={incorrectLetters.length} />
+        </div>
 
-
-      <div style={{ alignSelf: "stretch" }}>
-        <Keyboard disabled={isWinner || isLoser} activeLetters={guessedLetters.filter((letter) => wordToGuess.includes(letter))} inactiveLetters={incorrectLetters} addGuessedLetter={addGuessedLetter}/>
+        <div className="width">
+          <Keyboard disabled={isWinner || isLoser} activeLetters={guessedLetters.filter((letter) => wordToGuess.includes(letter))} inactiveLetters={incorrectLetters} addGuessedLetter={addGuessedLetter} />
+        </div>
       </div>
+
+      <HangmanMots reveal={isLoser} guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
 
     </div>
   );
